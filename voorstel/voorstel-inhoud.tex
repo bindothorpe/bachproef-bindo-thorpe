@@ -15,22 +15,21 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+In de hedendaagse digitale wereld evolueert de manier waarop advertenties worden geïtegreerd in videostreamingplatforms sneller dan ooit. Recente ontwikkelingen bij YouTube suggereren een verandering naar server-side ad injection, waar adverenties direct in de videostream worden geïntegreergd \cite{Li2024}. Deze technische verandering maakt de tranditionele methoden van advertentiedetectie en -blokkering, zoals adblockers, minder effectief.
 
+Dit onderzoek focust zich op de technische haalbaarheid van het detecteren van geïntegreerde advertenties in MP4-videobestanden met behulp van computer vision technieken in real-time. De primaire doelgroep zijn softwareontwikkelaars die software ontwikkelen voor contentanalyse. Het onderzoek focust specifiek op oplossingen die lokaal kunnen draaien op standaard consumentenlaptops, zonder afhankelijk te zijn van cloudservices, of grote rekenkracht.
+
+De centrale onderzoeksvraag is: \textit{"Is het mogelijk om met behulp van computer vision een lichtgewicht oplossing te ontwikkelen die advertenties in MP4-bestanden kan detecteren met een accuraatheid van 90\%, gebruikmakend van alleen lokale rekenkracht?"} Bestaande onderzoeken, zoals dat van \textcite{Covell2007}, hebben aangetoond dat advertentiedetectie mogelijk is door gebruik te maken van zowel audio- als visuele kenmerken, maar vereisen vaak substantiële verwerkingskracht en zijn niet ontworpen voor individueel gebruik.
+
+Het doel van dit onderzoek is het ontwikkelen van een proof-of-concept dat:
 \begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
+   \item Advertenties kan detecteren binnen één seconde na het afspelen
+   \item Een accuraatheid van minimaal 90\% behaalt
+   \item Effectief werkt op diverse soorten video-inhoud en advertenties
+   \item Draait op standaard consumentenhardware
 \end{itemize}
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
-
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+De relevantie van dit onderzoek wordt onderstreept door de voortdurende technische evolutie van reclamedistributie in online video's, en de behoefte aan toegankelijke tools voor contentanalyse. Het eindresultaat zal bestaan uit een werkende proof-of-concept implementatie en een analyse van de haalbaarheid van lokale advertentiedetectie, inclusief prestatiemetingen en suggesties voor verdere ontwikkeling.
 
 %---------- Stand van zaken ---------------------------------------------------
 
