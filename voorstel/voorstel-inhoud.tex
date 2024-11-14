@@ -67,17 +67,84 @@ Uit de literatuur blijkt dat er nog verschillende open vraagstukken zijn:
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Dit onderzoek volgt een systematische aanpak voor het ontwikkelen en evalueren van een lichtgewicht advertentiedetectiesysteem. De methodologie is opgedeeld in vijf hoofdfasen.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+\subsection{Technologisch Onderzoek (4 weken)}
+\begin{itemize}
+    \item Literatuurstudie naar bestaande oplossingen
+    \item Evaluatie van potentiële technologieën:
+    \begin{itemize}
+        \item Computer Vision: OpenCV
+        \item Machine Learning: PyTorch, TensorFlow, Scikit-learn
+        \item Video Processing: FFmpeg, OpenCV
+        \item Data Analyse: NumPy, Pandas, Seaborn
+    \end{itemize}
+    \item Analyse van hardware vereisten op consumentenhardware
+\end{itemize}
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+\subsection{Data Verzameling (4 weken)}
+\begin{itemize}
+    \item Ontwikkelen van een systematische verzamelingstrategie:
+    \begin{itemize}
+        \item Matrix van variabelen voor diverse videocontent
+        \item 10 videos per unieke combinatie van eigenschappen
+    \end{itemize}
+    \item Ontwikkeling van dataverwerkingsscripts:
+    \begin{itemize}
+        \item Video normalisatie (720p resolutie)
+        \item Advertentie injectie tool
+        \item Generatie van gepaarde JSON bestanden met tijdsmarkeringen
+    \end{itemize}
+    \item Verzamelen van 100-200 testvideos en advertenties
+\end{itemize}
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+\subsection{Ontwikkeling (8 weken)}
+\begin{itemize}
+    \item Implementatie van kernfunctionaliteiten:
+    \begin{itemize}
+        \item Segmentatie van video in 1-minuut analyseerbare delen
+        \item Buffer systeem voor vooruitlopende analyse
+        \item Detectie algoritme met CPU-focus
+        \item Optionele GPU-acceleratie via CUDA indien nodig
+    \end{itemize}
+    \item Containerisatie met Docker voor consistente uitvoering
+    \item Ontwikkeling van performantiemonitoringsysteem
+\end{itemize}
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+\subsection{Testen en Analyse (4 weken)}
+\begin{itemize}
+    \item Performantietests:
+    \begin{itemize}
+        \item CPU gebruik meting via Python's psutil library
+        \item Geheugengebruik monitoring
+        \item Frame-by-frame verwerkingstijd analyse
+        \item End-to-end systeemlatentie metingen
+    \end{itemize}
+    \item Accuraatheidsmetingen:
+    \begin{itemize}
+        \item Precision en recall per advertentietype
+        \item False positive/negative analyse
+        \item Analyse van detectiefouten per contenttype
+    \end{itemize}
+    \item Cross-platform tests op verschillende hardware configuraties
+\end{itemize}
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\subsection{Documentatie en Afronding (4 weken)}
+\begin{itemize}
+    \item Schrijven van technische documentatie
+    \item Analyse van resultaten en formuleren van conclusies
+    \item Voorbereiden van presentatie en demonstratie
+    \item GitHub repository documentatie en installatie-instructies
+\end{itemize}
+
+\subsection{Ontwikkelomgeving en Tools}
+\begin{itemize}
+    \item Ontwikkelomgeving: VSCode met Python plugins
+    \item Versiebeheer: Git/GitHub
+    \item Containerisatie: Docker voor reproduceerbare omgeving
+    \item Programmeertaal: Python 3.x
+    \item Hardware: Tests op verschillende consumentenlaptops
+\end{itemize}
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
