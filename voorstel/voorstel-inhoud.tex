@@ -15,7 +15,7 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-In de hedendaagse digitale wereld evolueert de manier waarop advertenties worden geïtegreerd in videostreamingplatforms sneller dan ooit. Recente ontwikkelingen bij YouTube suggereren een verandering naar server-side ad injection, waar adverenties direct in de videostream worden geïntegreergd \cite{Li2024}. Deze technische verandering maakt de tranditionele methoden van advertentiedetectie en -blokkering, zoals adblockers, minder effectief.
+In de hedendaagse digitale wereld evolueert de manier waarop advertenties worden geïtegreerd in videostreamingplatforms sneller dan ooit. Recente ontwikkelingen bij YouTube suggereren een verandering naar server-side ad injection, waar adverenties direct in de videostream worden geïntegreergd \cite{Li2024}. Deze technische verandering maakt de tranditionele methodes van advertentiedetectie en -blokkering, zoals adblockers, minder effectief.
 
 Dit onderzoek focust zich op de technische haalbaarheid van het detecteren van geïntegreerde advertenties in MP4-videobestanden met behulp van computer vision technieken in real-time. De primaire doelgroep zijn softwareontwikkelaars die software ontwikkelen voor contentanalyse. Het onderzoek focust specifiek op oplossingen die lokaal kunnen draaien op standaard consumentenlaptops, zonder afhankelijk te zijn van cloudservices, of grote rekenkracht.
 
@@ -36,24 +36,32 @@ De relevantie van dit onderzoek wordt onderstreept door de voortdurende technisc
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+\subsection{Evolutie van Video Advertenties}
+De manier waarop advertenties worden geïntegreerd in videoplatforms is significant geëvolueerd. Waar advertenties oorspronkelijk werden geladen via aparte client-side requests, verschuift de trend nu naar server-side ad injection \autocite{Li2024}. YouTube experimenteert momenteel met het direct embedden van advertenties in de videostream, wat traditionele advertentiedetectie methodes ineffectief maakt.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+\subsection{Bestaande Detectie Methodes}
+Verschillende onderzoekers hebben methodes ontwikkeld voor het detecteren van advertenties in videostreams. \textcite{Covell2007} presenteerden een aanpak die zowel audio- als visuele kenmerken gebruikt om herhaalde advertenties te identificeren. Deze methode behaalde een precisie van meer dan 99\% en een recall van 95\%, maar vereist substantiële verwerkingskracht en is niet ontworpen voor real-time verwerking op consumentenhardware.
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+\subsection{Machine Learning Benaderingen}
+Recente ontwikkelingen in machine learning hebben nieuwe mogelijkheden geopend voor videoclassificatie. \textcite{Liu2023} demonstreerden een deep learning framework dat individuele advertenties kan detecteren en segmenteren met behulp van een combinatie van audio- en visuele analyse. Hun aanpak gebruikt een lichtgewicht audio-gebaseerde segmentatie gevolgd door een diepere visuele analyse, wat efficiënter is dan pure videogebaseerde methodes.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+\subsection{Technische Uitdagingen}
+Het ontwikkelen van een effectieve advertentiedetectie oplossing voor consumentenhardware brengt verschillende uitdagingen met zich mee:
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+\begin{itemize}
+    \item \textbf{Verwerkingskracht}: Consumer hardware heeft vaak beperkte GPU-capaciteit voor real-time videoverwerking.
+    \item \textbf{Real-time Prestaties}: Deep learning modellen zijn computationeel intensief, wat real-time detectie moeilijker maakt zonder high-end hardware.
+    \item \textbf{Nauwkeurigheid vs. Efficiëntie}: Lichtgewicht modellen zijn sneller maar kunnen minder nauwkeurig zijn in advertentiedetectie.
+\end{itemize}
 
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
+\subsection{Aanwezige Uitdagingen}
+Uit de literatuur blijkt dat er nog verschillende open vraagstukken zijn:
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+\begin{itemize}
+    \item Het ontwikkelen van efficiënte detectiemethodes die lokaal kunnen draaien op consumentenhardware
+    \item Het bereiken van real-time prestaties zonder toegeving te doen aan de accuraatheid
+    \item Het omgaan met geïntegreerde advertenties die steeds meer op reguliere content lijken
+\end{itemize}
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
