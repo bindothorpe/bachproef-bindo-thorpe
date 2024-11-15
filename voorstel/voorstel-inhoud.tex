@@ -150,9 +150,84 @@ Dit onderzoek volgt een systematische aanpak voor het ontwikkelen en evalueren v
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+\subsection{Verwachte Meetresultaten}
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+We verwachten de volgende meetbare resultaten te kunnen demonstreren:
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+\begin{itemize}
+    \item \textbf{CPU Gebruik}:
+    \begin{itemize}
+        \item Gemiddeld gebruik rond 60\%
+        \item Piekgebruik niet hoger dan 80\%
+        \item Stabiel gebruikspatroon zonder onverwachte pieken
+    \end{itemize}
+    
+    \item \textbf{Detectie Accuraatheid}:
+    \begin{itemize}
+        \item Gemiddelde accuraatheid van 90\%
+        \item Minimale accuraatheid niet lager dan 85\%
+        \item Hogere accuraatheid voor kortere advertenties
+        \item Verwachte uitdagingen bij extreem lange advertenties (>10 minuten)
+    \end{itemize}
+    
+    \item \textbf{Reactietijd}:
+    \begin{itemize}
+        \item Detectie binnen 1 seconde na start advertentie
+        \item Consistente prestaties ongeacht video lengte
+    \end{itemize}
+\end{itemize}
+
+\subsection{Verwachte Visualisaties}
+Om de resultaten inzichtelijk te maken, zullen de volgende grafieken worden gegenereerd:
+
+\begin{itemize}
+    \item CPU gebruiksgrafiek over tijd
+    \item Accuraatheid per advertentietype
+    \item Reactietijd analyse
+    \item Geheugengebruik patroon
+    \item Detectie accuraatheid vs. advertentie lengte
+    \item Analyse van false positives per content type
+\end{itemize}
+
+\subsection{Meerwaarde voor Doelgroep}
+Dit onderzoek zal op verschillende manieren bijdragen aan het vakgebied:
+
+\begin{itemize}
+    \item \textbf{Voor Ontwikkelaars}:
+    \begin{itemize}
+        \item Inzicht in real-time video analyse technieken
+        \item Identificatie van veelvoorkomende bottlenecks en oplossingen
+        \item Open-source implementatie voor verder onderzoek
+    \end{itemize}
+    
+    \item \textbf{Voor het Vakgebied}:
+    \begin{itemize}
+        \item Nieuwe inzichten in lokale video processing
+        \item Benchmark voor prestaties op consumentenhardware
+        \item Basis voor toekomstige optimalisaties
+    \end{itemize}
+\end{itemize}
+
+\subsection{Verwachte Uitdagingen en Beperkingen}
+We anticiperen de volgende uitdagingen:
+
+\begin{itemize}
+    \item Hardware limitaties op consumentenapparatuur
+    \item Verminderde accuraatheid bij extreme advertentielengtes
+    \item Moeilijkheden bij het onderscheiden van user-generated advertenties
+    \item Trade-offs tussen snelheid en accuraatheid
+    \item Beperking tot MP4-videobestanden als inputformaat
+\end{itemize}
+
+\subsection{Onderzoekshypotheses}
+Onze hoofdhypotheses zijn:
+
+\begin{itemize}
+    \item Lokale verwerking is haalbaar met acceptabele compromissen in accuraatheid
+    \item Computer vision alleen zal ongeveer 50\% accuraatheid bereiken
+    \item Machine learning technieken kunnen de accuraatheid significant verbeteren
+    \item Een lichtgewicht model kan real-time presteren op consumentenhardware
+\end{itemize}
+
+Mocht uit het onderzoek blijken dat deze hypotheses niet kloppen, dan zal dit waardevolle inzichten opleveren over de werkelijke uitdagingen van lokale video-analyse en mogelijke alternatieve benaderingen, zoals hybride oplossingen met cloud computing.
 
